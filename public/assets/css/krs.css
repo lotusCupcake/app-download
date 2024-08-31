@@ -1,0 +1,123 @@
+body {
+    font-family: Arial;
+}
+
+@page {
+    margin: 2rem 2rem 2rem 2rem;
+}
+
+.big {
+    font-size: 12px;
+}
+
+.small {
+    font-size: 10px;
+}
+
+.right {
+    text-align: right;
+}
+
+.left {
+    text-align: left;
+}
+
+.center {
+    text-align: center;
+}
+
+.space-ttd {
+    margin: 0px 0px 70px 0px;
+}
+
+.space-clear {
+    margin: 0px 0px 0px 0px;
+}
+
+.black {
+    border: 1.5px solid black;
+}
+
+.dinamis {
+    border: 1.5px solid black;
+    padding: 5px;
+}
+
+.statis {
+    padding: 5px;
+}
+
+.logo {
+    margin-left: 10px;
+    float: left;
+    width: 70px;
+    height: 70px;
+}
+
+.header {
+    float: left;
+    width: 350px;
+    font-weight: bold;
+    margin: 0px 0px 0px 20px;
+    padding: 10px 0px 10px 0px;
+}
+
+.kartu {
+    width: 100%;
+    margin: 10px 0px 0px 0px;
+    font-weight: bold;
+}
+
+.biodata {
+    float: left;
+    position: relative;
+    margin: 5px 0px 0px 0px;
+    width: 90%;
+}
+
+.foto {
+    float: right;
+    position: relative;
+    margin: -40px 0px 0px 0px;
+    height: 90px;
+    width: 70px;
+    padding: 1px;
+}
+
+.photo {
+    height: 90px;
+    width: 70px;
+}
+
+.matkul {
+    margin: 10px 0px 0px 0px;
+    width: 100%;
+}
+
+.matkul table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.matkul table tr th {
+    border: 1.5px solid black;
+    padding: 5px;
+}
+
+.ttd-mhs {
+    float: left;
+    width: 30%;
+    margin: 25px 0px 100px 0px;
+}
+
+.ttd-wd {
+    float: right;
+    width: 30%;
+    margin: -15px -100px 100px 0px;
+}
+
+.ttd-pa {
+    float: left;
+    width: 30%;
+    margin: 15px 0px 0px 400px;
+}
