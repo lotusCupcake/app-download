@@ -29,7 +29,13 @@ class Krs extends BaseController
                 $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => 'A4', 'orientation' => 'L']);
                 $mpdf->showImageErrors = true;
                 $mpdf->WriteHTML(view('Modules\Krs\Views\download', $data));
-                $mpdf->Output('KartuRencanaStudi_' . $npm . '.pdf', 'D');
+
+                $this->response->setHeader('Content-Type', 'application/pdf');
+                $this->response->setHeader('Content-Disposition', 'inline; filename="KartuRencanaStudi_' . $npm . '.pdf"');
+                $this->response->setHeader('Content-Transfer-Encoding', 'binary');
+                $this->response->setHeader('Accept-Ranges', 'bytes');
+                $mpdf->Output('KartuRencanaStudi_' . $npm . '.pdf', 'I');
+                exit();
             }
         } else {
             return view('Modules\Krs\Views\error');

@@ -24,10 +24,16 @@ class Transkrip extends BaseController
             } else {
                 $npm = $data->data[0]->Nim;
                 $data = ['data' => $data->data];
-                $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => 'A4', 'orientation' => 'L']);
+                $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => 'A4']);
                 $mpdf->showImageErrors = true;
                 $mpdf->WriteHTML(view('Modules\Transkrip\Views\download', $data));
-                $mpdf->Output('TranskripNilai_' . $npm . '.pdf', 'D');
+
+                $this->response->setHeader('Content-Type', 'application/pdf');
+                $this->response->setHeader('Content-Disposition', 'inline; filename="KartuRencanaStudi_' . $npm . '.pdf"');
+                $this->response->setHeader('Content-Transfer-Encoding', 'binary');
+                $this->response->setHeader('Accept-Ranges', 'bytes');
+                $mpdf->Output('TranskripNilai_' . $npm . '.pdf', 'I');
+                exit();
             }
         } else {
             return view('Modules\Transkrip\Views\error');
